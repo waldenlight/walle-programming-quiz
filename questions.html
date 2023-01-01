@@ -15,7 +15,7 @@
     <nav>
         <p>Score: <span class="score"></span></p>
         <a href="./highscores.html">View highscores</a>
-        <p>Time Left: <spanc id="timer"></span></p>
+        <p id="time-left">Time Left: <spanc id="timer"></span></p>
     </nav>
 
     <h1 id="question"></h1>
@@ -25,6 +25,11 @@
     <p class="answer" id="answer-three"></p>
     <p class="answer" id="answer-four"></p>
 
+    <form id="initial-form">
+        <label id="initial-label" for="initial-input"></label>
+        <input type="text">
+        <button id="save"></button>
+    </form>
     <p id="result"></p>
 
     <script src="./assets/questions.js"></script>
