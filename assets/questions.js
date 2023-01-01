@@ -1,18 +1,31 @@
-// Defin variables
+// Define variables
+// Questions
 var question = document.querySelector("#question");
 var answerOne = document.querySelector("#answer-one");
 var answerTwo = document.querySelector("#answer-two");
 var answerThree = document.querySelector("#answer-three");
 var answerFour = document.querySelector("#answer-four");
-var result = document.querySelector("#result")
-var timer = document.querySelector("#timer")
+
+// Form
+var initialLabel = document.querySelector("#initial-label");
+var initialForm = document.querySelector("#initial-form")
+var result = document.querySelector("#result");
+var saveButton = document.querySelector("#save");
+
+// Timer
+var timeLabel = document.querySelector("#time-left");
+var timer = document.querySelector("#timer");
 
 
 function quiz() {
+    score = 0;
+    quizOver = false;
+    initialForm.hidden = true;
+
     // Timer
     var timeLeft = 75;
     var timeInterval = setInterval(function () {
-        if (timeLeft > 1) {
+        if (timeLeft > 1 && !quizOver) {
             timer.textContent = timeLeft;
             timeLeft--;
         } else {
@@ -26,6 +39,7 @@ function quiz() {
     // Correct functionality
     var correct = function () {
         result.textContent = "Correct";
+        score += 1;
         currentQuestion += 1;
         setInterval(function () {
             result.textContent = "";
@@ -82,20 +96,37 @@ function quiz() {
         answerFour.addEventListener("click", correct);
     }
 
+    // End functionality
+    var endQuiz = function () {
+        // Remove content
+        answerOne.textContent = "";
+        answerTwo.textContent = "";
+        answerThree.textContent = "";
+        answerFour.textContent = "";
+        // Stop timer
+        timeLabel.hidden = true;
+        // Make form visible
+        initialForm.hidden = false;
+        // End prompts
+        question.textContent = "All done!";
+        initialLabel.textContent = "Enter your initials:";
+        saveButton.textContent = "Save";
+        result.textContent = "Your had a score of " + score + " out of 5";
+    };
+
     // Determines question user is on
     var questionOn = function () {
         if (currentQuestion === 1) {
             questionOne();
         } else if (currentQuestion === 2) {
             questionTwo();
-        };
+        } else {
+            quizOver = true;
+            endQuiz();
+        }
     };
 
     questionOn();
 }
-
-var endQuiz = function () {
-    // end functionality
-};
 
 quiz();
