@@ -13,12 +13,12 @@
 <body>
 
     <nav>
-        <p>Score: <span class="score"></span></p>
+        <p>Score: <span id="displayed-score"></span></p>
         <a href="./highscores.html">View highscores</a>
         <p id="time-left">Time Left: <spanc id="timer"></span></p>
     </nav>
 
-    <h1 id="question"></h1>
+    <h1 id="title"></h1>
 
     <p class="answer" id="answer-one"></p>
     <p class="answer" id="answer-two"></p>
@@ -26,11 +26,21 @@
     <p class="answer" id="answer-four"></p>
 
     <form id="initial-form">
-        <label id="initial-label" for="initial-input"></label>
-        <input type="text">
-        <button id="save"></button>
+        <label id="initial-label" for="initial-label"></label>
+        <input type="text" id="initial-input">
+        <button href="./highscores.html" id="save"></button>
     </form>
     <p id="result"></p>
+
+    <div id="leaderboard">
+        <ul>
+            <li><span id="user1"></span>: <span id="u1-score"></span></li>
+            <li><span id="user2"></span>: <span id="u2-score"></span></li>
+            <li><span id="user3"></span>: <span id="u3-score"></span></li>
+            <li><span id="user4"></span>: <span id="u4-score"></span></li>
+            <li><span id="user5"></span>: <span id="u5-score"></span></li>
+        </ul>
+    </div>
 
     <script src="./assets/questions.js"></script>
 
