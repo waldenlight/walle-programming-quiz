@@ -6,43 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questions</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
     <!-- Stylesheests -->
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/questions.css">
 </head>
 
 <body>
 
     <nav>
         <p>Score: <span id="displayed-score"></span></p>
-        <a href="./highscores.html">View highscores</a>
-        <p id="time-left">Time Left: <spanc id="timer"></span></p>
+        <p id="time-left">Time Left: <span id="timer"></span></p>
     </nav>
 
-    <h1 id="title"></h1>
+    <main>
+        <div class="question">
 
-    <p class="answer" id="answer-one"></p>
-    <p class="answer" id="answer-two"></p>
-    <p class="answer" id="answer-three"></p>
-    <p class="answer" id="answer-four"></p>
+            <h1 id="title"></h1>
 
-    <form id="initial-form">
-        <label id="initial-label" for="initial-label"></label>
-        <input type="text" id="initial-input">
-        <button href="./highscores.html" id="save"></button>
-    </form>
-    <p id="result"></p>
+            <div id="answers">
+                <p class="answer" id="answer-one"></p>
+                <p class="answer" id="answer-two"></p>
+                <p class="answer" id="answer-three"></p>
+                <p class="answer" id="answer-four"></p>
+            </div>
 
-    <div id="leaderboard">
-        <ul>
-            <li><span id="user1"></span>: <span id="u1-score"></span></li>
-            <li><span id="user2"></span>: <span id="u2-score"></span></li>
-            <li><span id="user3"></span>: <span id="u3-score"></span></li>
-            <li><span id="user4"></span>: <span id="u4-score"></span></li>
-            <li><span id="user5"></span>: <span id="u5-score"></span></li>
-        </ul>
-    </div>
+        </div>
 
-    <script src="./assets/questions.js"></script>
+        <form id="initial-form">
+            <label id="initial-label" for="initial-label"></label>
+            <input type="text" id="initial-input">
+            <button href="./highscores.html" id="save"></button>
+        </form>
+        <p id="result"></p>
+
+        <div id="leaderboard">
+            <ul>
+                <li>1.<span id="user1"></span><span id="u1-score"></span></li>
+                <li>2.<span id="user2"></span><span id="u2-score"></span></li>
+                <li>3.<span id="user3"></span><span id="u3-score"></span></li>
+                <li>4.<span id="user4"></span><span id="u4-score"></span></li>
+                <li>5.<span id="user5"></span><span id="u5-score"></span></li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="./assets/scripts/questions.js"></script>
 
 </body>
 

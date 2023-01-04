@@ -1,0 +1,144 @@
+:root {
+    --party-yellow: #fde74c;
+    --cobalt: #3b3b3b;
+    --vibe-red: #BF0B0B;
+    --soft-grey: #d6d6d6;
+}
+
+* {
+    font-family: 'Abel', sans-serif;
+}
+
+body {
+    background-color: var(--cobalt);
+}
+
+nav {
+    background-color: var(--party-yellow);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 30px;
+}
+
+nav p {
+    margin: 0px 10px;
+    color: var(--cobalt);
+    font-weight: bold;
+}
+
+nav a {
+    margin: 0px 10px;
+    text-decoration: none;
+    color: var(--cobalt);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--vibe-red);
+}
+
+#timer {
+    background-color: var(--vibe-red);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 25px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: var(--cobalt);
+    background-color: var(--party-yellow);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#answers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.answer {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: var(--party-yellow);
+    min-width: 300px;
+    color: var(--cobalt);
+    margin: 15px 50px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.answer:hover {
+    background-color: var(--vibe-red);
+    color: white;
+}
+
+.result {
+    color: var(--party-yellow);
+    font-size: 50px;
+}
+
+#leaderboard li {
+    list-style: none;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+label {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+#result {
+    font-size: 30px;
+    color: var(--party-yellow);
+    margin-top: 20px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--soft-grey);
+    color: var(--cobalt);
+    width: 300px;
+    margin: 0px 400px 15px 400px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
