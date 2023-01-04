@@ -11,7 +11,7 @@ A programming quiz made by a programmer
 
 ## Installation
 
-Download the files and run it in the browser on your local machine by opening the index.html file OR simply open in GitHub Pages.
+Download the files and run it in the browser on your local machine by opening the index.html file OR simply open in GitHub Pages [Here](https://waldenlight.github.io/walle-programming-quiz/).
 
 ## Usage
 
