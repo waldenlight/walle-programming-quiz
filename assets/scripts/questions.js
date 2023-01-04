@@ -18,6 +18,8 @@ var saveButton = document.querySelector("#save");
 var timeLabel = document.querySelector("#time-left");
 var timer = document.querySelector("#timer");
 
+var homeLink = document.querySelector("#home-link");
+homeLink.hidden = true;
 
 function quiz() {
     score = 0;
@@ -185,6 +187,7 @@ function quiz() {
         initialLabel.textContent = "Enter your initials:";
         saveButton.textContent = "Save";
         result.textContent = "You had a score of " + score + " out of 5";
+        homeLink.hidden = false;
         // Submit form
         saveButton.addEventListener("click", saveScore)
         return;
@@ -238,6 +241,7 @@ var saveScore = function (event) {
     saveButton.hidden = true;
     result.textContent = "";
     result.hidden = true;
+    homeLink.hidden = false;
     // Show leaderboard
     title.textContent = "Highscores";
     leaderboard.hidden = false;
