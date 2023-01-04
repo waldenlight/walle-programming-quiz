@@ -116,6 +116,21 @@ label {
 
 input {
     margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+button {
+    font-family: 'Abel', sans-serif;
+    background-color: var(--party-yellow);
+    color: var(--cobalt);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--vibe-red);
+    color: white;
 }
 
 #result {
@@ -137,9 +152,20 @@ li {
     background-color: var(--soft-grey);
     color: var(--cobalt);
     width: 300px;
-    margin: 0px 400px 15px 400px;
+    margin: 0px 400px 10px 400px;
     padding: 10px;
     border-radius: 10px;
     font-size: 30px;
     font-weight: bold;
+}
+
+#highscore-home-link {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: var(--party-yellow);
+    color: var(--cobalt);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
 }
