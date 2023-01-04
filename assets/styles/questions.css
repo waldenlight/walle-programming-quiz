@@ -59,7 +59,7 @@ h1 {
     font-size: 40px;
     color: var(--cobalt);
     background-color: var(--party-yellow);
-    margin: 20px;
+    margin: 10px;
     padding: 20px;
     border-radius: 10px;
 }
@@ -78,7 +78,7 @@ h1 {
     background-color: var(--party-yellow);
     min-width: 300px;
     color: var(--cobalt);
-    margin: 15px 50px;
+    margin: 10px 50px;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
@@ -111,7 +111,7 @@ form {
 label {
     font-size: 20px;
     color: white;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 input {
@@ -121,13 +121,14 @@ input {
 #result {
     font-size: 30px;
     color: var(--party-yellow);
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 20px;
 }
 
 li {

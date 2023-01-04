@@ -239,7 +239,7 @@ var saveScore = function (event) {
     result.textContent = "";
     result.hidden = true;
     // Show leaderboard
-    title.textContent = "Leaderboard";
+    title.textContent = "Highscores";
     leaderboard.hidden = false;
     event.preventDefault();
     var quizTaker = {
