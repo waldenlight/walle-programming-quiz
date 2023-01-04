@@ -17,7 +17,7 @@ Download the files and run it in the browser on your local machine by opening th
 
 When running on local machine or opening in GitHub Pages, you should see this:
 
-![Photo of running application.](https://user-images.githubusercontent.com/76961678/210647860-562929f6-3730-4325-8177-a910b29c77c3.png)
+![Photo of running application.](https://user-images.githubusercontent.com/76961678/210656083-6bc8d23f-1720-4feb-ae43-944283462548.png)
     
 ## License
 
