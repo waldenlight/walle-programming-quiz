@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
     <!-- Stylesheests -->
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
 </head>
 
 <body>
@@ -21,14 +26,10 @@
     <!-- Elements with a class of question will display when the user presses play -->
     <!-- Elements with a end of start will display at the end of the quiz -->
 
-    <h1 class="start">Welcome to the WallE Programming Quiz</h1>
-    <p class="start">Click Play to Begin</p>
-    <a href="./questions.html" class="start" id="start-button">Play</a>
-
-    <h1 class="end" data-state="hidden"></h1>
-    <p class="end" data-state="hidden"><span class="score"></span></p>
-
-    <script src="./assets/scripts.js"></script>
+    <main>
+        <h1>Welcome to Wally's Programming Quiz</h1>
+        <a href="./questions.html" class="start" id="start-button">Play</a>
+    </main>
 
 </body>
 

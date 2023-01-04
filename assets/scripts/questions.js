@@ -23,11 +23,14 @@ function quiz() {
     score = 0;
     quizOver = false;
     initialForm.hidden = true;
+    initialLabel.hidden = true;
+    initialInput.hidden = true;
+    saveButton.hidden = true;
 
     // Timer
     var timeLeft = 75;
     var timeInterval = setInterval(function () {
-        if (timeLeft > 1 && !quizOver) {
+        if (timeLeft > 0 && !quizOver) {
             timer.textContent = timeLeft;
             timeLeft--;
         } else {
@@ -40,26 +43,27 @@ function quiz() {
 
     // Correct functionality
     var correct = function () {
+        result.setAttribute("class", "result")
         result.textContent = "Correct";
         score += 1;
         displayedScore.textContent = score;
         currentQuestion += 1;
-        setInterval(function () {
+        window.setTimeout(function questionResult() {
             result.textContent = "";
-            clearInterval();
+            clearInterval(questionResult);
             questionOn();
         }, 2000);
     };
 
     // Incorrect functionality
     var incorrect = function () {
+        result.setAttribute("class", "result")
         result.textContent = "Incorrect";
         // Decrease time
         timeLeft -= 15;
         currentQuestion += 1;
-        setInterval(function () {
+        window.setTimeout(function questionResult() {
             result.textContent = "";
-            clearInterval();
             questionOn();
         }, 2000);
     };
@@ -74,8 +78,6 @@ function quiz() {
         answerTwo.textContent = "int";
         answerThree.textContent = "string";
         answerFour.textContent = "boolean";
-        // Assign correct answer(s)
-        answerOne.setAttribute("class", "correct");
         // Run correct/incorrect if clicked
         answerOne.addEventListener("click", correct);
         answerTwo.addEventListener("click", incorrect);
@@ -90,13 +92,73 @@ function quiz() {
         answerTwo.textContent = "arrays";
         answerThree.textContent = "strings";
         answerFour.textContent = "All the above";
-        // Assign correct answer(s)
-        answerFour.setAttribute("class", "correct");
+        // Reset event listeners
+        answerOne.removeEventListener("click", correct);
+        answerTwo.removeEventListener("click", incorrect);
+        answerThree.removeEventListener("click", incorrect);
+        answerFour.removeEventListener("click", incorrect);
         // Run correct/incorrect if clicked
         answerOne.addEventListener("click", incorrect);
         answerTwo.addEventListener("click", incorrect);
         answerThree.addEventListener("click", incorrect);
         answerFour.addEventListener("click", correct);
+    }
+
+    var questionThree = function () {
+        // Set content
+        title.textContent = "Which is a 'truthy' Javascript value?";
+        answerOne.textContent = "undefined";
+        answerTwo.textContent = "null";
+        answerThree.textContent = "1";
+        answerFour.textContent = "0";
+        // Reset event listeners
+        answerOne.removeEventListener("click", incorrect);
+        answerTwo.removeEventListener("click", incorrect);
+        answerThree.removeEventListener("click", incorrect);
+        answerFour.removeEventListener("click", correct);
+        // Run correct/incorrect if clicked
+        answerOne.addEventListener("click", incorrect);
+        answerTwo.addEventListener("click", incorrect);
+        answerThree.addEventListener("click", correct);
+        answerFour.addEventListener("click", incorrect);
+    }
+
+    var questionFour = function () {
+        // Set content
+        title.textContent = "Inside what HTML element do we put the JavaScript?";
+        answerOne.textContent = "<HTML>";
+        answerTwo.textContent = "<js>";
+        answerThree.textContent = "<script>";
+        answerFour.textContent = "<link>";
+        // Assign correct answer(s)
+        answerOne.removeEventListener("click", incorrect);
+        answerTwo.removeEventListener("click", incorrect);
+        answerThree.removeEventListener("click", correct);
+        answerFour.removeEventListener("click", incorrect);
+        // Run correct/incorrect if clicked
+        answerOne.addEventListener("click", incorrect);
+        answerTwo.addEventListener("click", incorrect);
+        answerThree.addEventListener("click", correct);
+        answerFour.addEventListener("click", incorrect);
+    }
+
+    var questionFive = function () {
+        // Set content
+        title.textContent = "What is used to print to the console?";
+        answerOne.textContent = "console.log()";
+        answerTwo.textContent = "print()";
+        answerThree.textContent = "alert()";
+        answerFour.textContent = "function()";
+        // Reset even listeners
+        answerOne.removeEventListener("click", incorrect);
+        answerTwo.removeEventListener("click", incorrect);
+        answerThree.removeEventListener("click", correct);
+        answerFour.removeEventListener("click", incorrect);
+        // Run correct/incorrect if clicked
+        answerOne.addEventListener("click", correct);
+        answerTwo.addEventListener("click", incorrect);
+        answerThree.addEventListener("click", incorrect);
+        answerFour.addEventListener("click", incorrect);
     }
 
     // End functionality
@@ -108,16 +170,23 @@ function quiz() {
         answerFour.textContent = "";
         // Stop timer
         timeLabel.hidden = true;
+        // Hide question content
+        answerOne.hidden = true;
+        answerTwo.hidden = true;
+        answerThree.hidden = true;
+        answerFour.hidden = true;
         // Make form visible
         initialForm.hidden = false;
+        initialLabel.hidden = false;
+        initialInput.hidden = false;
+        saveButton.hidden = false;
         // End prompts
         title.textContent = "All done!";
         initialLabel.textContent = "Enter your initials:";
         saveButton.textContent = "Save";
-        result.textContent = "Your had a score of " + score + " out of 5";
+        result.textContent = "You had a score of " + score + " out of 5";
         // Submit form
         saveButton.addEventListener("click", saveScore)
-        title.textContent = "Leaderboard";
         return;
     };
 
@@ -127,6 +196,12 @@ function quiz() {
             questionOne();
         } else if (currentQuestion === 2) {
             questionTwo();
+        } else if (currentQuestion === 3) {
+            questionThree();
+        } else if (currentQuestion === 4) {
+            questionFour();
+        } else if (currentQuestion === 5) {
+            questionFive();
         } else {
             quizOver = true;
             endQuiz();
